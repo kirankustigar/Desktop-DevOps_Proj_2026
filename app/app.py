@@ -1,0 +1,1 @@
+from flask import Flask, jsonify`nimport datetime`napp = Flask(__name__)`n@app.route("/health", methods=["GET"])`ndef health_check():`n    return jsonify({"status": "active", "timestamp": datetime.datetime.now().isoformat(), "service": "fintech-core-api"}), 200`nif __name__ == "__main__":`n    app.run(host="0.0.0.0", port=5000)

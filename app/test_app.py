@@ -1,0 +1,1 @@
+import unittest`nfrom app import app`nclass FlaskTestCase(unittest.TestCase):`n    def test_health_endpoint(self):`n        tester = app.test_client(self)`n        response = tester.get("/health")`n        self.assertEqual(response.status_code, 200)`n        self.assertIn(b"active", response.data)`nif __name__ == "__main__":`n    unittest.main()
